@@ -44,8 +44,6 @@ const App = () => {
     const updatedArray = todos.map((todo) => {
       if (todo.id === currentEditingId && value.length > 3) {
         return { ...todo, name: value };
-      } else {
-        alert("please enter minimum 4 characters");
       }
       return todo;
     });
