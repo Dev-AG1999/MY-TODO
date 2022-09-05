@@ -31,6 +31,8 @@ const App = () => {
       return todo.id != id;
     });
     setTodos(newArray);
+    setediting(false);
+
   };
   const editTodo = (data) => {
     setediting(true);
@@ -54,19 +56,20 @@ const App = () => {
   return (
     <div
       className="app"
-      style={{ height: "100vh", backgroundColor: "pink", display: "flex" }}
-    >
+      style={{ height: "100vh", backgroundColor: "pink", display: "flex",flexDirection:"column" }}
+    > <h1 style={{margin:"auto",marginBottom:"0"}}>TODO</h1>
       <div
         className="todo"
         style={{
           display: "flex",
           flexDirection: "column",
           margin: "auto",
-          width: "500px",
+          width: "30%",
           height: "500px",
           backgroundColor: "black",
           overflowY: "auto",
           overflow: "hidden",
+          borderRadius:"20PX"
         }}
       >
         <div
@@ -90,6 +93,7 @@ const App = () => {
               width: "100%",
               alignItems: "center",
               textAlign: "center",
+              outline:"none",border:"none"
             }}
           />
           <Button
