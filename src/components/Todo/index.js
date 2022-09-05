@@ -30,7 +30,6 @@ export const Todo = ({ title, onDelete, onEdit }) => {
         <div
           className="buttonContainer"
           style={{
-            width: "40%",
             display: "flex",
             justifyContent: "flex-end",
             alignItems: "center",

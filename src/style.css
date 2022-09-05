@@ -1,0 +1,9 @@
+ .todo{
+    width: 500px;
+
+}
+@media screen  and (max-width:480px) {
+.todo{
+    width: 100%;
+}
+}

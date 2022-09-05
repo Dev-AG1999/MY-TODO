@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button } from "./components/button";
 import { Input } from "./components/Input";
 import { Todo } from "./components/Todo";
+import "./style.css";
 // Bootstrap for react
 const App = () => {
   //defining state
@@ -28,7 +29,7 @@ const App = () => {
   };
   const deleteTodo = (id) => {
     const newArray = todos.filter((todo) => {
-      return todo.id != id;
+      return todo.id !== id;
     });
     setTodos(newArray);
     setediting(false);
@@ -64,7 +65,6 @@ const App = () => {
           display: "flex",
           flexDirection: "column",
           margin: "auto",
-          width: "30%",
           height: "500px",
           backgroundColor: "black",
           overflowY: "auto",
