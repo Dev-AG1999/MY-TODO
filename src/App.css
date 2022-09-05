@@ -1,38 +1,105 @@
-.App {
-  text-align: center;
+import React,{useState} from 'react';
+// Bootstrap for react
+
+
+
+const App =()=>{
+  //defining state
+ const [userInout, setuserInout] = useState("");
+ const [list, setlist] = useState([]);
+
+ //updating the value of input
+const  updateInput=(value)=>{
+     setuserInout(value)
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+   
+//   // Add item if user input in not empty
+   const addItem=()=>{
+     if(userInout !== null ){
+       //creating a object
+       const userInput = {
+  
+         // Add a random id which is used to delete
+         id :  Math.random(),
+  
+         // Add a user value to list
+         value : userInout
+       };
+  
+       // Update list
+       const listed = [...list];
+       listed.push(userInput);
+       console.log(listed)
+       console.log(list) // empty
+  
+       // reset state
+       setuserInout("");
+       setlist(listed);
+       console.log(list)
+     }
+   }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+   const  deleteItem=(key)=>{
+    const listed = [...list];
+  
+//     // Filter values and leave value which we need to delete
+    const updateList = listed.filter(item => item.id !== key);
+  
+//     // Update list in state
+setlist(updateList)
+  
   }
-}
+    return(
+  <>
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+          <div style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  fontSize: '3rem',
+                  fontWeight: 'bolder',
+                }}
+                >TODO LIST
+            </div>
+  
+           <hr/>
+         
+  
+        
+          <input
+            placeholder="add item . . . "
+            size="lg"
+            value = {userInout}
+            onChange = {item => updateInput(item.target.value)}
+            aria-label="add something"
+            aria-describedby="basic-addon2"
+          />
+        
+            <button
+              variant="dark"
+              size="lg"
+              onClick = {()=>addItem()}
+              >
+              ADD
+            </button>
+         
+  
+     
+     
+          {/* map over and print items */}
+         {list.map(item => {return(
+  
+            <div
+              onClick = { () => deleteItem(item.id) }>
+              {item.value}
+            </div>
+  
+         )})}
+       
+     </>
+    );
 
-.App-link {
-  color: #61dafb;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+  
+export default App;
