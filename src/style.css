@@ -1,9 +1,19 @@
+
  .todo{
     width: 500px;
+    height: 500px;
 
 }
-@media screen  and (max-width:480px) {
+.heading{
+    font-size: 72px;
+    background: -webkit-linear-gradient(#cf5f71,rgb(18, 18, 98),white,white);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+@media screen  and (max-width:560px) {
+
 .todo{
     width: 100%;
+    height: 80%;
 }
 }
