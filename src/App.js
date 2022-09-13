@@ -22,7 +22,6 @@ const App = () => {
       setValue("");
       setTodos(newTodos);
       localStorage.setItem("localTodo", JSON.stringify(newTodos));
-      let displayItem = localStorage.getItem("localTodo");
     } else {
       alert("please enter minimum 4 characters");
     }
