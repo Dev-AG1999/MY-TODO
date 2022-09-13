@@ -149,7 +149,7 @@ const App = () => {
           style={{ height: "100%", overflowY: "scroll" }}
         >
           {todos
-            .filter((data) => data.name.toLowerCase().toUpperCase().includes(value))
+            .filter((data) => data.name.includes(value))
             .map((data) => (
               <Todo
                 key={data.id}
