@@ -79,7 +79,7 @@ const App = () => {
         alignItems: "center",
       }}
     >
-      <h1 className="heading" style={{ fontSize: "60px", margin: "0" }}>
+      <h1 className="heading" style={{ fontSize: "66px", margin: "0" }}>
         TODO
       </h1>
       <div
